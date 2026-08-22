@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #12211f;
+  --color-card: #1b2e2a;
+  --color-card-raised: #223a34;
+  --color-border: #2b453e;
+  --color-text: #eef3f1;
+  --color-muted: #9db3ac;
+  --color-faint: #6f8580;
+
+  --color-pet: #57b6c7;
+  --color-hdpe: #e7e2d3;
+  --color-pp: #c98a4b;
+  --color-ps: #b5b0c9;
+  --color-ldpe: #7fae7a;
+  --color-unknown: #6b6f76;
+
+  --color-uncertainty: #e8a33d;
+  --color-danger: #d9694f;
+  --color-success: #6fbf8b;
+
+  /* Curated system-font stacks standing in for Space Grotesk / Inter /
+     IBM Plex Mono, since this build environment cannot reach Google
+     Fonts. Restore the real webfonts via next/font/google in an
+     environment with normal internet access. */
+  --font-display: "Century Gothic", "Trebuchet MS", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter var", -apple-system, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", "Cascadia Code", ui-monospace, "Menlo", monospace;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-card: var(--color-card);
+  --color-card-raised: var(--color-card-raised);
+  --color-border-tess: var(--color-border);
+  --color-text-tess: var(--color-text);
+  --color-muted-tess: var(--color-muted);
+  --color-faint-tess: var(--color-faint);
+  --color-pet: var(--color-pet);
+  --color-hdpe: var(--color-hdpe);
+  --color-pp: var(--color-pp);
+  --color-ps: var(--color-ps);
+  --color-ldpe: var(--color-ldpe);
+  --color-unknown: var(--color-unknown);
+  --color-uncertainty: var(--color-uncertainty);
+  --color-danger: var(--color-danger);
+  --color-success: var(--color-success);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-tess-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-uncertainty);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
